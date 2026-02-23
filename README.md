@@ -1,6 +1,4 @@
-# flutter_cert_practice
-A collection of practice questions for certifications: https://www.udemy.com/user/martindo/
-
+# A Flutter application to get practice questions of certifications
 PMI Project Management Professional (PMP)
 PMI Certified Associate in Project Management (CAPM)
 PMI Program Management Professional (PgMP)
