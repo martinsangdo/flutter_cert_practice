@@ -1,0 +1,9 @@
+{
+"workbench.colorCustomizations":
+{
+"tab.activeBackground": "#e7f0d9",
+"tab.unfocusedActiveBackground": "#d6d8e2",
+"editor.background": "#e9e4e4c4",
+		"workbench.colorCustomizations": {"editor.background":"#ddd"}
+}
+}
