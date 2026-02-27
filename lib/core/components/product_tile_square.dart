@@ -51,35 +51,7 @@ class ProductTileSquare extends StatelessWidget {
                       .textTheme
                       .titleMedium
                       ?.copyWith(color: Colors.black),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
                 ),
-                const Spacer(),
-                Text(
-                  data.weight,
-                ),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      '\$${data.price.toInt()}',
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleLarge
-                          ?.copyWith(color: Colors.black),
-                    ),
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    Text(
-                      '\$${data.mainPrice}',
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            decoration: TextDecoration.lineThrough,
-                          ),
-                    ),
-                  ],
-                )
               ],
             ),
           ),

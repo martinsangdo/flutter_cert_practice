@@ -5,9 +5,9 @@ class Dummy {
   /// List Of Dummy Products
   static List<ProductModel> products = [
     ProductModel(
-      name: 'Perry\'s Ice Cream Banana',
+      name: 'PMI Professional in Business Analysis (PMI-PBA)',
       weight: '800 gm',
-      cover: 'https://i.imgur.com/6unJlSL.png',
+      cover: 'https://martinsangdo.github.io/public/img/cert_logo/PMI_PBA.png',
       images: ['https://i.imgur.com/6unJlSL.png'],
       price: 13,
       mainPrice: 15,
@@ -33,8 +33,8 @@ class Dummy {
   /// List Of Dummy Bundles
   static List<BundleModel> bundles = [
     BundleModel(
-      name: 'Bundle Pack',
-      cover: 'https://i.imgur.com/Y0IFT2g.png',
+      name: 'PMI Project Management Professional (PMP)',
+      cover: 'https://martinsangdo.github.io/public/img/cert_logo/PMP.png',
       itemNames: ['Onion, Oil, Salt'],
       price: 35,
       mainPrice: 50.32,
