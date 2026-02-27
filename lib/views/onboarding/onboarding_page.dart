@@ -43,12 +43,21 @@ class _OnboardingPageState extends State<OnboardingPage> {
   void initState() {
     super.initState();
     controller = PageController();
+    _autoNavigate();
   }
 
   @override
   void dispose() {
     controller.dispose();
     super.dispose();
+  }
+
+  void _autoNavigate() {
+    Future.delayed(const Duration(seconds: 1), () {
+      if (mounted) {
+        Navigator.pushNamed(context, AppRoutes.entryPoint);
+      }
+    });
   }
 
   @override
@@ -72,39 +81,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
               ),
             ),
             const Spacer(),
-            Stack(
-              alignment: AlignmentDirectional.center,
-              children: [
-                TweenAnimationBuilder(
-                  duration: AppDefaults.duration,
-                  tween: Tween<double>(
-                      begin: 0, end: (1 / items.length) * (currentPage + 1)),
-                  curve: Curves.easeInOutBack,
-                  builder: (context, double value, _) => SizedBox(
-                    height: 70,
-                    width: 70,
-                    child: CircularProgressIndicator(
-                      value: value,
-                      strokeWidth: 6,
-                      backgroundColor: AppColors.cardColor,
-                      color: AppColors.primary,
-                    ),
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: _gotoNextPage,
-                  style: ElevatedButton.styleFrom(shape: const CircleBorder()),
-                  child: SvgPicture.asset(
-                    AppIcons.arrowForward,
-                    colorFilter: const ColorFilter.mode(
-                      Colors.white,
-                      BlendMode.srcIn,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: AppDefaults.padding),
           ],
         ),
       ),
