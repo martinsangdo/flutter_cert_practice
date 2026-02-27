@@ -26,7 +26,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
         //todo: display something or check if we had metadata in sqlite
       } else {
         final metadataObjFromCloud = jsonDecode(response.body);
-        // debugPrint(metadataObjFromCloud.toString());
         glb_certification_list_metainfo = metadataObjFromCloud;
       }
       _autoNavigate();

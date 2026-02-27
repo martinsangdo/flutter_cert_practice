@@ -40,90 +40,103 @@ class CateogoriesGrid extends StatelessWidget {
         crossAxisCount: 3,
         children: [
           CategoryTile(
-            imageLink: 'https://i.imgur.com/tGChxbZ.png',
-            label: 'Vegetables',
-            backgroundColor: AppColors.primary,
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/AWS_SAP.png',
+            label: 'AWS',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
           ),
           CategoryTile(
-            imageLink: 'https://i.imgur.com/yOFxoIP.png',
-            label: 'Meat And Fish',
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/AZ_AI_102.png',
+            label: 'Azure',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
           ),
           CategoryTile(
-            imageLink: 'https://i.imgur.com/GPsRaFC.png',
-            label: 'Medicine',
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/COMP_A_PLUS.png',
+            label: 'CompTIA',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
           ),
           CategoryTile(
-            imageLink: 'https://i.imgur.com/mGRqfnc.png',
-            label: 'Baby Care',
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/DTB_DEA.png',
+            label: 'Databricks',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
           ),
           CategoryTile(
-            imageLink: 'https://i.imgur.com/fwyz4oC.png',
-            label: 'Office Supplies',
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/GCP_PCA.png',
+            label: 'GCP',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
           ),
           CategoryTile(
-            imageLink: 'https://i.imgur.com/DNr8a6R.png',
-            label: 'Beauty',
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/ISC_CISSP.png',
+            label: 'ISACA',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
           ),
           CategoryTile(
-            imageLink: 'https://i.imgur.com/O2ZX5nR.png',
-            label: 'Gym Equipment',
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/NCA_GENL.png',
+            label: 'NVIDIA',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
           ),
           CategoryTile(
-            imageLink: 'https://i.imgur.com/wJBopjL.png',
-            label: 'Gardening Tools',
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/PMP.png',
+            label: 'PMI',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
           ),
           CategoryTile(
-            imageLink: 'https://i.imgur.com/P4yJA9t.png',
-            label: 'Pet Care',
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/PRINCE_AF.png',
+            label: 'PRINCE2',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
           ),
           CategoryTile(
-            imageLink: 'https://i.imgur.com/sxGf76e.png',
-            label: 'Eye Wears',
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/PSM_1.png',
+            label: 'Scrum',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
           ),
           CategoryTile(
-            imageLink: 'https://i.imgur.com/BPvKeXl.png',
-            label: 'Pack',
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/SERV_CAD.png',
+            label: 'ServiceNow',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
           ),
           CategoryTile(
-            imageLink: 'https://i.imgur.com/m65fusg.png',
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/SNOW_SAA.png',
+            label: 'Snowflake',
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+            },
+          ),
+          CategoryTile(
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/TERRA_A_004.png',
+            label: 'Terraform',
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+            },
+          ),
+          CategoryTile(
+            imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/SAFE_ARCH.png',
             label: 'Others',
             onTap: () {
               Navigator.pushNamed(context, AppRoutes.categoryDetails);
             },
-          ),
+          )
         ],
       ),
     );
