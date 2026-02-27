@@ -34,7 +34,7 @@ const List<String> CATEGORY_LIST = [
   "Terraform",
   "Others"
 ];
-const CATEGORY_GROUPS = {
+const Map<String, List<String>> CATEGORY_GROUPS = {
   "AWS":["AWS_CLF_C02", "AWS_AIF", "AWS_DVA_C02", "AWS_AIP_C01", "AWS_DEA_C01", "AWS_MLA", "AWS_SAA", "AWS_SAP", "AWS_DOP", "AWS_ANS_C01"],
   "Azure": ["AZ_AI_102", "AZ_AI_900", "AZ_DP_900", "AZ_DP_100", "AZ_DP_300", "AZ_AZ_204", "AZ_AZ_900", "AZ_AZ_700", "AZ_AZ_500","AZ_SA_305", "AZ_AZ_400"],
   "CompTIA": ["COMP_A_PLUS", "COMP_CLOUD_NETX", "COMP_SECURITY_X", "COMP_CLOUD_PLUS", "COMP_CYSA", "COMP_PEN_TEST","COMP_SEC_AI"],

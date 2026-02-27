@@ -15,6 +15,11 @@ class ProductTileSquare extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textStyle = Theme.of(context).textTheme.titleMedium!;
+    // If height is null, Flutter assumes ~1.2
+    final lineHeight =
+        (textStyle.fontSize ?? 14) * (textStyle.height ?? 1.2);
+  
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: AppDefaults.padding / 2),
       child: Material(
@@ -34,8 +39,8 @@ class ProductTileSquare extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(AppDefaults.padding / 2),
+                Expanded(
+                  flex: 7,
                   child: AspectRatio(
                     aspectRatio: 1 / 1,
                     child: NetworkImageWithLoader(
@@ -45,12 +50,14 @@ class ProductTileSquare extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                Text(
-                  data.name,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(color: Colors.black),
+                SizedBox(
+                  height: lineHeight * 4, // 👈 EXACT 4 lines
+                  child: Text(
+                    data.name,
+                    maxLines: 4,
+                    overflow: TextOverflow.ellipsis,
+                    style: textStyle.copyWith(color: Colors.black),
+                  ),
                 ),
               ],
             ),

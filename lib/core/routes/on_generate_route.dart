@@ -79,7 +79,9 @@ class RouteGenerator {
         return CupertinoPageRoute(builder: (_) => const CheckoutPage());
 
       case AppRoutes.categoryDetails:
-        return CupertinoPageRoute(builder: (_) => const CategoryProductPage());
+        final args = settings.arguments as Map<String, String>?;
+        final title = args?['title'] ?? ''; 
+        return CupertinoPageRoute(builder: (_) => CategoryProductPage(title: title));
 
       case AppRoutes.login:
         return CupertinoPageRoute(builder: (_) => const LoginPage());

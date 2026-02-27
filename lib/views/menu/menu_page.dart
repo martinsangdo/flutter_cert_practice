@@ -43,98 +43,140 @@ class CateogoriesGrid extends StatelessWidget {
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/AWS_SAP.png',
             label: 'AWS',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'AWS',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/AZ_AI_102.png',
             label: 'Azure',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'Azure',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/COMP_A_PLUS.png',
             label: 'CompTIA',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'CompTIA',
+                }); 
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/DTB_DEA.png',
             label: 'Databricks',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'Databricks',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/GCP_PCA.png',
             label: 'GCP',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'GCP',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/ISC_CISSP.png',
             label: 'ISACA',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'ISACA',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/NCA_GENL.png',
             label: 'NVIDIA',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'NVIDIA',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/PMP.png',
             label: 'PMI',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'PMI',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/PRINCE_AF.png',
             label: 'PRINCE2',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'PRINCE2',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/PSM_1.png',
             label: 'Scrum',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'Scrum',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/SERV_CAD.png',
             label: 'ServiceNow',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'ServiceNow',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/SNOW_SAA.png',
             label: 'Snowflake',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'Snowflake',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/TERRA_A_004.png',
             label: 'Terraform',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'Terraform',
+                });
             },
           ),
           CategoryTile(
             imageLink: 'https://martinsangdo.github.io/public/img/cert_logo/SAFE_ARCH.png',
             label: 'Others',
             onTap: () {
-              Navigator.pushNamed(context, AppRoutes.categoryDetails);
+              Navigator.pushNamed(context, AppRoutes.categoryDetails,
+                arguments: {
+                  'title': 'Others',
+                });
             },
           )
         ],
