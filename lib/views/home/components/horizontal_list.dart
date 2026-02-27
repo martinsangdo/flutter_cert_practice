@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/components/product_tile_square.dart';
-import '../../../core/models/dummy_product_model.dart';
 import '../../../core/components/title_and_action_button.dart';
 import '../../../core/constants/constants.dart';
 import '../../../core/routes/app_routes.dart';
+import '../../../core/models/certification_model.dart';
 
 class HorizontalList extends StatelessWidget {
   final String title;
-  final List<ProductModel> items;
+  final List<CertificationModel> items;
 
   const HorizontalList({
     super.key,

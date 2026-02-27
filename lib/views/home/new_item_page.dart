@@ -27,7 +27,7 @@ class NewItemsPage extends StatelessWidget {
             itemCount: 8,
             itemBuilder: (context, index) {
               return ProductTileSquare(
-                data: Dummy.products.first,
+                data: Dummy.certifications[index],
               );
             },
           ),

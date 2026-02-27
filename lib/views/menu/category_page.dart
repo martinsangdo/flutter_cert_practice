@@ -24,7 +24,7 @@ class CategoryProductPage extends StatelessWidget {
         itemCount: 16,
         itemBuilder: (context, index) {
           return ProductTileSquare(
-            data: Dummy.products.first,
+            data: Dummy.certifications[index],
           );
         },
       ),

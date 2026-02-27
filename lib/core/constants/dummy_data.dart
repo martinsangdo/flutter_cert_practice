@@ -1,5 +1,6 @@
 import '../models/dummy_bundle_model.dart';
 import '../models/dummy_product_model.dart';
+import '../models/certification_model.dart';
 
 class Dummy {
   /// List Of Dummy Products
@@ -59,6 +60,19 @@ class Dummy {
       itemNames: ['Onion, Oil, Salt'],
       price: 35,
       mainPrice: 50.32,
+    ),
+  ];
+
+  static List<CertificationModel> certifications = [
+    CertificationModel(
+      symbol: 'PMP',
+      name: 'PMI Project Management Professional (PMP)',
+      cover: 'https://martinsangdo.github.io/public/img/cert_logo/PMP.png',
+    ),
+    CertificationModel(
+      symbol: 'PMI_CAPM',
+      name: 'PMI Certified Associate in Project Management (CAPM)',
+      cover: 'https://martinsangdo.github.io/public/img/cert_logo/PMI_CAPM.png',
     ),
   ];
 }

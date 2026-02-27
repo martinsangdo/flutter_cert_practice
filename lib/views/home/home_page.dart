@@ -8,6 +8,7 @@ import 'components/ad_space.dart';
 import 'components/horizontal_list.dart';
 import 'components/popular_packs.dart';
 import '../../core/constants/constants.dart';
+import '../../core/models/certification_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,11 +17,22 @@ class HomePage extends StatefulWidget {
   }
 
 class _HomePageState extends State<HomePage> {
+  final Map<String, List<CertificationModel>> _grouped_certifications = {};  //key: category, value: list of certifications
+
+  void grouping_certifications_2_categories() {
+    for (var item in glb_certification_list_metainfo) {
+      String categoryName = CERTIFICATION_CATEGORIES[item['c']];
+      _grouped_certifications
+        .putIfAbsent(categoryName, () => [])
+        .add(CertificationModel.fromJson(item));
+    }
+    // debugPrint(_grouped_certifications.toString());
+  }
 
   @override
   void initState() {
     super.initState();
-    debugPrint(glb_certification_list_metainfo.toString());
+    grouping_certifications_2_categories();
   }
 
   @override
@@ -73,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: HorizontalList(
                         title: category,
-                        items: [],
+                        items: _grouped_certifications[category] ?? [],
                       ),
                   );
                 },

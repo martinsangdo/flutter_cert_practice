@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../constants/constants.dart';
-import '../models/dummy_product_model.dart';
 import '../routes/app_routes.dart';
 import 'network_image.dart';
+import '../models/certification_model.dart';
 
 class ProductTileSquare extends StatelessWidget {
   const ProductTileSquare({
@@ -11,7 +11,7 @@ class ProductTileSquare extends StatelessWidget {
     required this.data,
   });
 
-  final ProductModel data;
+  final CertificationModel data;
 
   @override
   Widget build(BuildContext context) {
