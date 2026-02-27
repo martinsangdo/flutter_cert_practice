@@ -13,8 +13,8 @@ class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
 
   @override
-  State<OnboardingPage> createState() => _OnboardingPageState();
-}
+    State<OnboardingPage> createState() => _OnboardingPageState();
+  }
 
 class _OnboardingPageState extends State<OnboardingPage> {
   List<OnboardingModel> items = OnboardingData.items;
@@ -26,15 +26,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
         //todo: display something or check if we had metadata in sqlite
       } else {
         final metadataObjFromCloud = jsonDecode(response.body);
-        debugPrint(metadataObjFromCloud.toString());
+        // debugPrint(metadataObjFromCloud.toString());
+        glb_certification_list_metainfo = metadataObjFromCloud;
       }
+      _autoNavigate();
     }
 
   @override
   void initState() {
     super.initState();
     fetchMetadata();
-    _autoNavigate();
   }
 
   @override

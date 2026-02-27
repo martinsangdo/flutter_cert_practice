@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/components/product_tile_square.dart';
+import '../../../core/models/dummy_product_model.dart';
 import '../../../core/components/title_and_action_button.dart';
 import '../../../core/constants/constants.dart';
 import '../../../core/routes/app_routes.dart';
 
-class OurNewItem extends StatelessWidget {
-  const OurNewItem({
+class HorizontalList extends StatelessWidget {
+  final String title;
+  final List<ProductModel> items;
+
+  const HorizontalList({
     super.key,
+    required this.title,
+    required this.items,
   });
 
   @override
@@ -15,7 +21,7 @@ class OurNewItem extends StatelessWidget {
     return Column(
       children: [
         TitleAndActionButton(
-          title: 'Our New Item',
+          title: title,
           onTap: () => Navigator.pushNamed(context, AppRoutes.newItems),
         ),
         SingleChildScrollView(
@@ -23,8 +29,8 @@ class OurNewItem extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Row(
             children: List.generate(
-              Dummy.products.length,
-              (index) => ProductTileSquare(data: Dummy.products[index]),
+              items.length,
+              (index) => ProductTileSquare(data: items[index]),
             ),
           ),
         ),

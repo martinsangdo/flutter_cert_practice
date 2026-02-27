@@ -21,5 +21,5 @@ const List<String> CERTIFICATION_CATEGORIES = [
 const String CERTIFICATION_LIST_PATH = "https://api.npoint.io/c7ab4a7e38083f41af73";
 
 //dynamic global variables
-List<String> glb_certification_list_metainfo = [];
+List<dynamic> glb_certification_list_metainfo = [];
 // Map<String, String> glb_home_cities = {}; //cities to show in homepage
