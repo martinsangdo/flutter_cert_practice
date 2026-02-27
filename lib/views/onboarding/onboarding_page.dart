@@ -15,40 +15,16 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
-  int currentPage = 0;
-  late PageController controller;
   List<OnboardingModel> items = OnboardingData.items;
-
-  onPageChange(int value) {
-    currentPage = value;
-    setState(() {});
-  }
-
-  _gotoNextPage() {
-    if (currentPage < items.length - 1) {
-      controller.nextPage(
-        duration: AppDefaults.duration,
-        curve: Curves.ease,
-      );
-    } else {
-      _gotoLoginSignUp();
-    }
-  }
-
-  _gotoLoginSignUp() {
-    Navigator.pushNamed(context, AppRoutes.introLogin);
-  }
 
   @override
   void initState() {
     super.initState();
-    controller = PageController();
     _autoNavigate();
   }
 
   @override
   void dispose() {
-    controller.dispose();
     super.dispose();
   }
 
@@ -56,8 +32,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     Future.delayed(const Duration(seconds: 1), () {
       if (mounted) {
         Navigator.pushNamedAndRemoveUntil(context, AppRoutes.entryPoint,
-      (route) => false, // remove everything from stack so that next screen is not accessible
-      );
+            (route) => false); // remove everything from stack so that next screen is not accessible
       }
     });
   }
@@ -72,9 +47,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             Expanded(
               flex: 8,
               child: PageView.builder(
-                onPageChanged: onPageChange,
                 itemCount: items.length,
-                controller: controller,
                 itemBuilder: (context, index) {
                   return OnboardingView(
                     data: items[index],
@@ -82,7 +55,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 },
               ),
             ),
-            const Spacer(),
           ],
         ),
       ),
