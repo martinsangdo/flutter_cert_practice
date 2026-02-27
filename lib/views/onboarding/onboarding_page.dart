@@ -55,7 +55,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
   void _autoNavigate() {
     Future.delayed(const Duration(seconds: 1), () {
       if (mounted) {
-        Navigator.pushNamed(context, AppRoutes.entryPoint);
+        Navigator.pushNamedAndRemoveUntil(context, AppRoutes.entryPoint,
+      (route) => false, // remove everything from stack so that next screen is not accessible
+      );
       }
     });
   }

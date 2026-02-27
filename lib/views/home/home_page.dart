@@ -18,19 +18,19 @@ class HomePage extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
-              leading: Padding(
-                padding: const EdgeInsets.only(left: 8),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, AppRoutes.drawerPage);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFF2F6F3),
-                    shape: const CircleBorder(),
-                  ),
-                  child: SvgPicture.asset(AppIcons.sidebarIcon),
-                ),
-              ),
+              // leading: Padding(  //menu icon
+              //   padding: const EdgeInsets.only(left: 8),
+              //   child: ElevatedButton(
+              //     onPressed: () {
+              //       Navigator.pushNamed(context, AppRoutes.drawerPage);
+              //     },
+              //     style: ElevatedButton.styleFrom(
+              //       backgroundColor: const Color(0xFFF2F6F3),
+              //       shape: const CircleBorder(),
+              //     ),
+              //     child: SvgPicture.asset(AppIcons.sidebarIcon),
+              //   ),
+              // ),
               floating: true,
               title: SvgPicture.asset(
                 "assets/images/app_logo.svg",
