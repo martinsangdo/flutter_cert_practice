@@ -6,6 +6,8 @@ import '../../core/routes/app_routes.dart';
 import 'components/onboarding_view.dart';
 import 'data/onboarding_data.dart';
 import 'data/onboarding_model.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -17,9 +19,21 @@ class OnboardingPage extends StatefulWidget {
 class _OnboardingPageState extends State<OnboardingPage> {
   List<OnboardingModel> items = OnboardingData.items;
 
+  void fetchMetadata() async {
+      final response = await http.Client().get(Uri.parse(CERTIFICATION_LIST_PATH));
+      if (response.statusCode != 200){
+        debugPrint('Cannot get metadata from cloud');
+        //todo: display something or check if we had metadata in sqlite
+      } else {
+        final metadataObjFromCloud = jsonDecode(response.body);
+        debugPrint(metadataObjFromCloud.toString());
+      }
+    }
+
   @override
   void initState() {
     super.initState();
+    fetchMetadata();
     _autoNavigate();
   }
 
