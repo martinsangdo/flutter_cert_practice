@@ -20,13 +20,14 @@ class _HomePageState extends State<HomePage> {
   final Map<String, List<CertificationModel>> _grouped_certifications = {};  //key: category, value: list of certifications
 
   void grouping_certifications_2_categories() {
+    debugPrint(glb_certification_list_metainfo.toString());
     for (var item in glb_certification_list_metainfo) {
       String categoryName = CERTIFICATION_CATEGORIES[item['c']];
       _grouped_certifications
         .putIfAbsent(categoryName, () => [])
         .add(CertificationModel.fromJson(item));
     }
-    // debugPrint(_grouped_certifications.toString());
+    debugPrint(_grouped_certifications.toString());
   }
 
   @override
@@ -52,28 +53,7 @@ class _HomePageState extends State<HomePage> {
                 "assets/images/app_logo.svg",
                 height: 32,
               ),
-              actions: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 8, top: 4, bottom: 4),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, AppRoutes.search);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFF2F6F3),
-                      shape: const CircleBorder(),
-                    ),
-                    child: SvgPicture.asset(AppIcons.search),
-                  ),
-                ),
-              ],
             ),
-            // SliverPadding(
-            //   padding: EdgeInsets.symmetric(vertical: AppDefaults.padding),
-            //   sliver: SliverToBoxAdapter(
-            //     child: HorizontalList(title: "PROJECT MANAGEMENT", items: Dummy.products),
-            //   ),
-            // ),
             SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, index) {

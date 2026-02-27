@@ -35,10 +35,10 @@ class TitleAndActionButton extends StatelessWidget {
                     .bodyLarge
                     ?.copyWith(color: Colors.black),
           ),
-          TextButton(
-            onPressed: onTap,
-            child: Text(actionLabel ?? 'View All'),
-          ),
+          // TextButton(
+          //   onPressed: onTap,
+          //   child: Text(actionLabel ?? 'View All'),
+          // ),
         ],
       ),
     );
