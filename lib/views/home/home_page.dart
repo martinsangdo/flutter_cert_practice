@@ -56,10 +56,28 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            SliverPadding(
-              padding: EdgeInsets.symmetric(vertical: AppDefaults.padding),
-              sliver: SliverToBoxAdapter(
-                child: HorizontalList(title: "PROJECT MANAGEMENT", items: Dummy.products),
+            // SliverPadding(
+            //   padding: EdgeInsets.symmetric(vertical: AppDefaults.padding),
+            //   sliver: SliverToBoxAdapter(
+            //     child: HorizontalList(title: "PROJECT MANAGEMENT", items: Dummy.products),
+            //   ),
+            // ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  final category = CERTIFICATION_CATEGORIES[index];
+
+                  return Padding(
+                    padding: EdgeInsets.symmetric(
+                      vertical: AppDefaults.padding,
+                    ),
+                    child: HorizontalList(
+                        title: category,
+                        items: [],
+                      ),
+                  );
+                },
+                childCount: CERTIFICATION_CATEGORIES.length,
               ),
             ),
           ],
