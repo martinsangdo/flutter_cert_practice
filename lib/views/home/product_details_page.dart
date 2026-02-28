@@ -11,6 +11,7 @@ import '../../core/components/network_image.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../../core/models/question_model.dart';
+import '../../core/components/expandable_text.dart';
 
 class ProductDetailsPage extends StatefulWidget {
   final CertificationModel data;
@@ -84,6 +85,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
+                      textAlign: TextAlign.justify,
                     ),
                     const SizedBox(height: 8),
                     for (var option in question['o'].entries) ...[
@@ -94,6 +96,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                             ),
                       ),
                     ],
+                    //show the expand here
+                    ExpandableAnswer(
+                      answer: question['a'],
+                      explanations: question['e'],
+                    ),
                   ],
                 ),
               ),
