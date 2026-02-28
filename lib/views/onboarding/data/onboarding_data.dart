@@ -5,21 +5,9 @@ class OnboardingData {
   static List<OnboardingModel> items = [
     OnboardingModel(
       imageUrl: AppImages.onboarding1,
-      headline: 'Browse all the category 555',
+      headline: 'Explore practice tests',
       description:
-          'In aliquip aute exercitation ut et nisi ut mollit. Deserunt dolor elit pariatur aute .',
-    ),
-    OnboardingModel(
-      imageUrl: AppImages.onboarding2,
-      headline: 'Amazing Discounts & Offers',
-      description:
-          'In aliquip aute exercitation ut et nisi ut mollit. Deserunt dolor elit pariatur aute .',
-    ),
-    OnboardingModel(
-      imageUrl: AppImages.onboarding3,
-      headline: 'Delivery in 30 Min',
-      description:
-          'In aliquip aute exercitation ut et nisi ut mollit. Deserunt dolor elit pariatur aute .',
+          'Practice tests help you prepare for your exams and pass them at the first attempt.',
     ),
   ];
 }

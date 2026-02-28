@@ -43,7 +43,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   }
 
   void _autoNavigate() {
-    Future.delayed(const Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 3), () {//3 seconds delay for splash screen
       if (mounted) {
         Navigator.pushNamedAndRemoveUntil(context, AppRoutes.entryPoint,
             (route) => false); // remove everything from stack so that next screen is not accessible

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../views/auth/intro_login_page.dart';
 import '../../views/entrypoint/entrypoint_ui.dart';
 import '../../views/home/product_details_page.dart';
 import '../../views/menu/category_page.dart';
@@ -14,9 +13,6 @@ class RouteGenerator {
     final route = settings.name;
 
     switch (route) {
-      case AppRoutes.introLogin:
-        return CupertinoPageRoute(builder: (_) => const IntroLoginPage());
-
       case AppRoutes.onboarding:
         return CupertinoPageRoute(builder: (_) => const OnboardingPage());
 
