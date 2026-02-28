@@ -5,11 +5,8 @@ import '../../core/constants/app_icons.dart';
 
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_defaults.dart';
-import '../cart/cart_page.dart';
 import '../home/home_page.dart';
 import '../menu/menu_page.dart';
-import '../profile/profile_page.dart';
-import '../save/save_page.dart';
 import 'components/app_navigation_bar.dart';
 
 /// This page will contain all the bottom navigation tabs
@@ -34,8 +31,6 @@ class _EntryPointUIState extends State<EntryPointUI> {
   List<Widget> pages = [
     const HomePage(),
     const MenuPage(),
-    const SavePage(isHomePage: false),
-    const ProfilePage(),
   ];
 
   @override
