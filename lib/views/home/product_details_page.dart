@@ -48,6 +48,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
+    int question_index = 1;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -70,7 +71,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               widget.data.cover,
               fit: BoxFit.contain,
             ),
-            //Question block
+            //list of questions
             for (var question in questions) ...[
               Padding(
                 padding: const EdgeInsets.all(AppDefaults.padding),
@@ -78,16 +79,21 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      question['q'],
+                      (question_index++).toString() + ") " + question['q'],
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
                     ),
                     const SizedBox(height: 8),
-                    const Text(
-                      'aaa',
-                    ),
+                    for (var option in question['o'].entries) ...[
+                      Text(
+                        option.key + ") " + option.value,
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              color: Colors.black,
+                            ),
+                      ),
+                    ],
                   ],
                 ),
               ),
