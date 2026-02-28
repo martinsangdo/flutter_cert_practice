@@ -7,6 +7,10 @@ import '../../core/components/product_images_slider.dart';
 import '../../core/components/review_row_button.dart';
 import '../../core/constants/app_defaults.dart';
 import '../../core/models/certification_model.dart';
+import '../../core/components/network_image.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import '../../core/models/question_model.dart';
 
 class ProductDetailsPage extends StatefulWidget {
   final CertificationModel data;
@@ -17,6 +21,31 @@ class ProductDetailsPage extends StatefulWidget {
 }
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
+  List<dynamic> questions = [];
+
+  void fetchQuestions() async {
+    String url = 'https://api.npoint.io/' + widget.data.file_url;
+    final response = await http.Client().get(Uri.parse(url));
+    if (response.statusCode != 200) {
+      debugPrint('Cannot get questions from cloud');
+    } else {
+      setState(() {
+        questions = jsonDecode(response.body);
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchQuestions();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,77 +66,32 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const ProductImagesSlider(
-              images: [
-                'https://i.imgur.com/3o6ons9.png',
-                'https://i.imgur.com/3o6ons9.png',
-                'https://i.imgur.com/3o6ons9.png',
-              ],
+            NetworkImageWithLoader(
+              widget.data.cover,
+              fit: BoxFit.contain,
             ),
-            SizedBox(
-              width: double.infinity,
-              child: Padding(
+            //Question block
+            for (var question in questions) ...[
+              Padding(
                 padding: const EdgeInsets.all(AppDefaults.padding),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Cauliflower Bangladeshi',
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      question['q'],
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                             fontWeight: FontWeight.bold,
+                            color: Colors.black,
                           ),
                     ),
                     const SizedBox(height: 8),
-                    const Text('Weight: 5Kg'),
+                    const Text(
+                      'aaa',
+                    ),
                   ],
                 ),
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: AppDefaults.padding),
-              child: PriceAndQuantityRow(
-                currentPrice: 20,
-                orginalPrice: 30,
-                quantity: 2,
-              ),
-            ),
-            const SizedBox(height: 8),
-
-            /// Product Details
-            Padding(
-              padding: const EdgeInsets.all(AppDefaults.padding),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Product Details',
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black,
-                        ),
-                  ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    'Duis aute veniam veniam qui aliquip irure duis sint magna occaecat dolore nisi culpa do. Est nisi incididunt aliquip  commodo aliqua tempor.',
-                  ),
-                ],
-              ),
-            ),
-
-            /// Review Row
-            const Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: AppDefaults.padding,
-                // vertical: AppDefaults.padding,
-              ),
-              child: Column(
-                children: [
-                  Divider(thickness: 0.1),
-                  ReviewRowButton(totalStars: 5),
-                  Divider(thickness: 0.1),
-                ],
-              ),
-            ),
+            ]
           ],
         ),
       ),

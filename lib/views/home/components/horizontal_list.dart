@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/components/product_tile_square.dart';
-import '../../../core/components/title_and_action_button.dart';
 import '../../../core/constants/constants.dart';
 import '../../../core/routes/app_routes.dart';
 import '../../../core/models/certification_model.dart';
@@ -20,9 +19,13 @@ class HorizontalList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TitleAndActionButton(
-          title: title,
-          onTap: () => Navigator.pushNamed(context, AppRoutes.newItems),
+        Text(
+          title,  
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
+          textAlign: TextAlign.left,
         ),
         SingleChildScrollView(
           padding: const EdgeInsets.only(left: AppDefaults.padding),
