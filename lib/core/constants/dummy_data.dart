@@ -69,12 +69,14 @@ class Dummy {
       name: 'PMI Project Management Professional (PMP)',
       cover: 'https://martinsangdo.github.io/public/img/cert_logo/PMP.png',
       file_url: '1234567890',
+      url: 'https://www.udemy.com/course/pmp-exam-prep-course-based-on-pmbok-7th-edition/',
     ),
     CertificationModel(
       symbol: 'PMI_CAPM',
       name: 'PMI Certified Associate in Project Management (CAPM)',
       cover: 'https://martinsangdo.github.io/public/img/cert_logo/PMI_CAPM.png',
       file_url: '1234567890',
+      url: 'https://www.udemy.com/course/pmp-exam-prep-course-based-on-pmbok-7th-edition/',
     ),
   ];
 }

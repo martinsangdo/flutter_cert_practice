@@ -2,16 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../constants/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BuyNowRow extends StatelessWidget {
   const BuyNowRow({
     super.key,
-    required this.onCartButtonTap,
     required this.onBuyButtonTap,
+    required this.url,
   });
 
-  final void Function() onCartButtonTap;
-  final void Function() onBuyButtonTap;
+  final VoidCallback onBuyButtonTap;
+  final String url;
+
+  Future<void> openExternalLink() async {
+    final uri = Uri.parse(url);
+
+    if (!await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication, // 👈 opens system browser
+    )) {
+      throw 'Could not launch $url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +33,13 @@ class BuyNowRow extends StatelessWidget {
       ),
       child: Row(
         children: [
-          OutlinedButton(
-            onPressed: onCartButtonTap,
-            child: SvgPicture.asset(AppIcons.shoppingCart),
-          ),
-          const SizedBox(width: AppDefaults.padding),
           Expanded(
             child: ElevatedButton(
-              onPressed: onBuyButtonTap,
+              onPressed: () => openExternalLink(),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(AppDefaults.padding * 1.2),
               ),
-              child: const Text('Buy Now'),
+              child: const Text('Check out more questions for this certification'),
             ),
           ),
         ],

@@ -10,7 +10,6 @@ import '../../core/models/certification_model.dart';
 import '../../core/components/network_image.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import '../../core/models/question_model.dart';
 import '../../core/components/expandable_text.dart';
 
 class ProductDetailsPage extends StatefulWidget {
@@ -61,7 +60,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
           padding: const EdgeInsets.symmetric(horizontal: AppDefaults.padding),
           child: BuyNowRow(
             onBuyButtonTap: () {},
-            onCartButtonTap: () {},
+            url: widget.data.url,
           ),
         ),
       ),

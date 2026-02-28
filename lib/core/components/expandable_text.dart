@@ -56,7 +56,7 @@ class _ExpandableAnswerState extends State<ExpandableAnswer> {
               explanation.key + ": " + explanation.value,
               textAlign: TextAlign.justify,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Colors.grey,
+                    color: Colors.grey[600],
                   ),
             ),
           ],
