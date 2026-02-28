@@ -12,7 +12,7 @@
     </queries>
 
     <application
-        android:label="Certification Practice Questions"
+        android:label="Certification Test Questions"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
