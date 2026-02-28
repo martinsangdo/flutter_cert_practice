@@ -5,6 +5,7 @@ import '../../core/components/product_tile_square.dart';
 import '../../core/constants/constants.dart';
 import '../../core/models/certification_model.dart';
 
+//list of certs by category
 class CategoryProductPage extends StatelessWidget {
   final String title;
   List<CertificationModel> items = [];

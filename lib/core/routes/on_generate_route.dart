@@ -48,6 +48,7 @@ import '../../views/review/submit_review_page.dart';
 import '../../views/save/save_page.dart';
 import 'app_routes.dart';
 import 'unknown_page.dart';
+import '../../core/models/certification_model.dart';
 
 class RouteGenerator {
   static Route? onGenerate(RouteSettings settings) {
@@ -116,7 +117,8 @@ class RouteGenerator {
         return CupertinoPageRoute(builder: (_) => const BundleDetailsPage());
 
       case AppRoutes.productDetails:
-        return CupertinoPageRoute(builder: (_) => const ProductDetailsPage());
+        final args = settings.arguments as CertificationModel;
+        return CupertinoPageRoute(builder: (_) => ProductDetailsPage(data: args));
 
       case AppRoutes.createMyPack:
         return CupertinoPageRoute(builder: (_) => const BundleCreatePage());

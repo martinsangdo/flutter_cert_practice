@@ -40,18 +40,18 @@ class AppBottomNavigationBar extends StatelessWidget {
           ),
           /* <---- We have to leave this 3rd index (2) for the cart item -----> */
 
-          BottomAppBarItem(
-            name: 'Save',
-            iconLocation: AppIcons.save,
-            isActive: currentIndex == 3,
-            onTap: () => onNavTap(3),
-          ),
-          BottomAppBarItem(
-            name: 'Profile',
-            iconLocation: AppIcons.profile,
-            isActive: currentIndex == 4,
-            onTap: () => onNavTap(4),
-          ),
+          // BottomAppBarItem(
+          //   name: 'Save',
+          //   iconLocation: AppIcons.save,
+          //   isActive: currentIndex == 2,
+          //   onTap: () => onNavTap(2),
+          // ),
+          // BottomAppBarItem(
+          //   name: 'Profile',
+          //   iconLocation: AppIcons.profile,
+          //   isActive: currentIndex == 3,
+          //   onTap: () => onNavTap(3),
+          // ),
         ],
       ),
     );

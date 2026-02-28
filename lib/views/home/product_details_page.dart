@@ -6,17 +6,24 @@ import '../../core/components/price_and_quantity.dart';
 import '../../core/components/product_images_slider.dart';
 import '../../core/components/review_row_button.dart';
 import '../../core/constants/app_defaults.dart';
+import '../../core/models/certification_model.dart';
 
-class ProductDetailsPage extends StatelessWidget {
-  const ProductDetailsPage({super.key});
+class ProductDetailsPage extends StatefulWidget {
+  final CertificationModel data;
+  const ProductDetailsPage({super.key, required this.data});
 
+  @override
+  State<ProductDetailsPage> createState() => _ProductDetailsPageState();
+}
+
+class _ProductDetailsPageState extends State<ProductDetailsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: const AppBackButton(),
-        title: const Text('Product Details'),
+        title: Text(widget.data.name),
       ),
       bottomNavigationBar: SafeArea(
         child: Padding(
