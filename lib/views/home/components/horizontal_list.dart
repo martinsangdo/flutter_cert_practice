@@ -20,7 +20,7 @@ class HorizontalList extends StatelessWidget {
     return Column(
       children: [
         Text(
-          title,  
+          title + " ("+items.length.toString()+")",  
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: Colors.blue,
