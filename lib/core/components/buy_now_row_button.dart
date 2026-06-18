@@ -14,15 +14,9 @@ class BuyNowRow extends StatelessWidget {
   final VoidCallback onBuyButtonTap;
   final String url;
 
-  Future<void> openExternalLink() async {
+  Future<void> openExternalLink(BuildContext context) async {
     final uri = Uri.parse(url);
-
-    if (!await launchUrl(
-      uri,
-      mode: LaunchMode.externalApplication, // 👈 opens system browser
-    )) {
-      throw 'Could not launch $url';
-    }
+    await launchUrl(uri, mode: LaunchMode.platformDefault);
   }
 
   @override
@@ -35,7 +29,7 @@ class BuyNowRow extends StatelessWidget {
         children: [
           Expanded(
             child: ElevatedButton(
-              onPressed: () => openExternalLink(),
+              onPressed: () => openExternalLink(context),
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(AppDefaults.padding * 1.2),
               ),

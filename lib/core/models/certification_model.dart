@@ -21,7 +21,7 @@ class CertificationModel {
       name: json['n'],
       cover: LOGO_PREFIX_PATH + json['s'] + LOGO_SUFFIX_PATH,
       file_url: json['f'],
-      url: 'https://www.udemy.com/course/' + json['l'],
+      url: LANDING_URL_PREFIX + json['l'],
     );
   }
 }
